@@ -1,6 +1,6 @@
 # learning_react
 
-##Create Project
+## Create Project
 
 1. Install
 
