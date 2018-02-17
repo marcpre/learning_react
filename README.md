@@ -20,3 +20,6 @@ DONE!
 
 `index.js` is the entry point of our react application.
 
+## Importing of components
+
+All imports from components have to have an uppercase character such as `import Person from './Person/Person'`
