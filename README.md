@@ -14,3 +14,9 @@ DONE!
 
 [Github - Facebook "create-react"](https://github.com/facebook/create-react-app)
 
+## Application
+
+### Entry Point
+
+`index.js` is the entry point of our react application.
+
