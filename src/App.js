@@ -1,17 +1,26 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import './App.css';
 import Person from './Person/Person'
 
 class App extends Component {
+  
+  state = {
+    persons: [
+      { name: 'Max', age: 28},
+      { name: 'Maxddsdf', age: 24},
+      { name: 'adf', age: 26}
+    ]
+  }
+    
+  
   render() {
-    return (
-      <div className="App">
-        <h1>Hi, I am a react app.</h1>
-        <p>I am not html</p>
-        <Person />
-        <Person />
-        <Person />
-        <Person />
+    return ( <div className = "App" >
+      <h1 > Hi, I am a react app. </h1>  
+        <Person name = {this.state.persons[0].name} age = {this.state.persons[0].age} />
+        <Person name = {this.state.persons[1].name} age = {this.state.persons[1].age} />
+        <Person name = {this.state.persons[2].name} age = {this.state.persons[2].age} />
       </div>
     );
   }
