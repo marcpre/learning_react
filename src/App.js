@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import './App.css';
 import Person from './Person/Person'
-import Radium from 'radium'
 
 class App extends Component {
   
@@ -98,18 +97,18 @@ deletePersonHandler = (personIndex) => {
     } 
     
     return ( 
-      <div className = "App" >
-        <h1 > Hi, I am a react app. </h1>  
-        <p className={classes.join(' ')}> This is my text </p>
-          <button 
-            style={style}
-            onClick={this.togglePersonsHandler}> Toggle Persons </button>
-          {persons}          
-      </div>
+        <div className = "App" >
+          <h1 > Hi, I am a react app. </h1>  
+          <p className={classes.join(' ')}> This is my text </p>
+            <button 
+              style={style}
+              onClick={this.togglePersonsHandler}> Toggle Persons </button>
+            {persons}          
+        </div>
     );
   // JSX is rendered like the following below!  
   // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default Radium(App);
+export default App;
