@@ -2,7 +2,7 @@ import React, {
   Component
 } from 'react';
 import classes from './App.css';
-import Person from './Person/Person'
+import Person from '../components/Persons/Person/Person'
 
 class App extends Component {
   
@@ -100,7 +100,7 @@ deletePersonHandler = (personIndex) => {
             <button 
               className={btnClass}
               onClick={this.togglePersonsHandler}> Toggle Persons </button>
-            {persons}          
+            {persons}
         </div>
     );
   // JSX is rendered like the following below!  
