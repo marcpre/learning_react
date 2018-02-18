@@ -65,6 +65,7 @@ deletePersonHandler = (personIndex) => {
     };
     
     let persons = null;
+    let btnClass = '';
     
     if(this.state.showPersons) {
       persons = (
@@ -81,11 +82,7 @@ deletePersonHandler = (personIndex) => {
       </div> 
       );
       
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'lightred',
-        color: 'black',
-      };
+      btnClass = classes.Red;
     }
 
     let assignedClasses = [];
@@ -101,7 +98,7 @@ deletePersonHandler = (personIndex) => {
           <h1 > Hi, I am a react app. </h1>  
           <p className={assignedClasses.join(' ')}> This is my text </p>
             <button 
-              style={style}
+              className={btnClass}
               onClick={this.togglePersonsHandler}> Toggle Persons </button>
             {persons}          
         </div>
