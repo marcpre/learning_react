@@ -11,7 +11,8 @@ class App extends Component {
       { name: 'Max', age: 28},
       { name: 'Maxddsdf', age: 24},
       { name: 'adf', age: 26}
-    ]
+    ],
+    showPersons: false
   }
   
 
@@ -23,6 +24,11 @@ class App extends Component {
         { name: 'lolonator', age: 26}
     ]
    })
+  }
+  
+  togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow})
   }
     
   switchNameHandler = (newName) => {
@@ -42,14 +48,13 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer'
-    }
+    };
     
-    return ( 
-    <div className = "App" >
-      <h1 > Hi, I am a react app. </h1>  
-        <button 
-        style={style}
-        onClick={this.switchNameHandler.bind(this, 'adsfsad')}> Switch Name </button>  
+    let persons = null;
+    
+    if(this.state.showPersons) {
+      persons = (
+        <div>
         <Person 
           name = {this.state.persons[0].name} 
           age = {this.state.persons[0].age} />
@@ -63,6 +68,18 @@ class App extends Component {
           click={this.switchNameHandler} >
             In the above paragraph the button switched gets also triggered.
         </Person>
+      </div> 
+      );
+    }
+
+    return ( 
+    <div className = "App" >
+      <h1 > Hi, I am a react app. </h1>  
+        <button 
+        style={style}
+        onClick={this.togglePersonsHandler}> Switch Name 
+        </button>
+        {persons}          
       </div>
     );
   }
