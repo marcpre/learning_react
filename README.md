@@ -29,3 +29,6 @@ All imports from components have to have an uppercase character such as `import 
 `radium `is a popular style lib for react.
 
 [Radium Github](https://github.com/FormidableLabs/radium)
+
+
+--> stopped at 83
