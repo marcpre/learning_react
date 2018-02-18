@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import './App.css';
 import Person from './Person/Person'
+import Radium from 'radium'
 
 class App extends Component {
   
@@ -57,7 +58,11 @@ deletePersonHandler = (personIndex) => {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black',
+      }
     };
     
     let persons = null;
@@ -77,12 +82,25 @@ deletePersonHandler = (personIndex) => {
       </div> 
       );
       
-      style.backgroundColor = 'red'
+      style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'lightred',
+        color: 'black',
+      };
     }
 
+    let classes = [];
+    if(this.state.persons.length <= 2) {
+      classes.push('red');
+    } 
+    if(this.state.persons.length <= 1) {
+      classes.push('bold'); // ['red' 'bold']
+    } 
+    
     return ( 
       <div className = "App" >
         <h1 > Hi, I am a react app. </h1>  
+        <p className={classes.join(' ')}> This is my text </p>
           <button 
             style={style}
             onClick={this.togglePersonsHandler}> Toggle Persons </button>
@@ -94,4 +112,4 @@ deletePersonHandler = (personIndex) => {
   }
 }
 
-export default App;
+export default Radium(App);
