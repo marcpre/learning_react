@@ -55,7 +55,7 @@ deletePersonHandler = (personIndex) => {
 }
   
   render() {
-    const style = {
+    /*const style = {
       backgroundColor: 'green',
       color: 'white',
       font: 'inherit',
@@ -66,10 +66,10 @@ deletePersonHandler = (personIndex) => {
         backgroundColor: 'lightgreen',
         color: 'black',
       }
-    };
+    };*/
     
     let persons = null;
-    let btnClass = '';
+    //let btnClass = '';
     
     if(this.state.showPersons) {
       persons = (
