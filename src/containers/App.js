@@ -6,17 +6,20 @@ import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 
 class App extends Component {
+  constructor(props){
+    super(props)
   
-  state = {
-    persons: [
-      { id: 'a12sdf', name: 'Max', age: 28},
-      { id: 'as23df',  name: 'Maxddsdf', age: 24},
-      { id: 'asd4f', name: 'adf', age: 26}
-    ],
-    otherState: 'some other value',
-    showPersons: false
+    this.state = {
+      persons: [
+        { id: 'a12sdf', name: 'Max', age: 28},
+        { id: 'as23df',  name: 'Maxddsdf', age: 24},
+        { id: 'asd4f', name: 'adf', age: 26}
+      ],
+      otherState: 'some other value',
+      showPersons: false
+    }
   }
-
+  
   nameChangeHandler = (event, id) => {
     
     //get person of json
