@@ -1,29 +1,30 @@
 import React from 'react'
 import classes from './Cockpit.css'
+import Aux from '../../hoc/Aux';
 
 
-const cockpit = (props) => {   
+const cockpit = (props) => {
     let assignedClasses = [];
-    let btnClass = '';
-    if(props.showPersons){
-        btnClass = classes.Red;
+    let btnClass = classes.Button;
+    if (props.showPersons) {
+        btnClass = [classes.Button, classes.Red].join(' ');
     }
-    
-    if(props.persons.length <= 2) {
-      assignedClasses.push(classes.red);
-    } 
-    if(props.persons.length <= 1) {
-      assignedClasses.push(classes.bold); // ['red' 'bold']
-    } 
-    
-    return(
-        <div className={classes.Cockpit}>
+
+    if (props.persons.length <= 2) {
+        assignedClasses.push(classes.red);
+    }
+    if (props.persons.length <= 1) {
+        assignedClasses.push(classes.bold); // ['red' 'bold']
+    }
+
+    return (
+        <Aux>
             <h1 > {props.appTitle} </h1>  
             <p className={assignedClasses.join(' ')}> This is my text </p>
             <button 
                 className={btnClass}
                 onClick={props.clicked}> Toggle Persons </button>        
-        </div>
+        </Aux>
     );
 }
 
